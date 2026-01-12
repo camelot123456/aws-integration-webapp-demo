@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "69443cc9-ec71-45d1-a387-97f4aa2f56ad",
+		"name": "Learn AWS Web App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15888904"
+	},
+	"item": [
+		{
+			"name": "S3",
+			"item": [
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ADMIN/Downloads/Backup-codes-votuanviet27101990.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localUrl}}/api/upload",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"api",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "download",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localUrl}}/api/download/{{s3Filename}}",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"api",
+								"download",
+								"{{s3Filename}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "s3Filename",
+			"value": ""
+		},
+		{
+			"key": "localUrl",
+			"value": ""
+		}
+	]
+}
