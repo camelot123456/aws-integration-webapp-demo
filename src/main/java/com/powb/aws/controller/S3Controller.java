@@ -2,6 +2,7 @@ package com.powb.aws.controller;
 
 import com.powb.aws.service.S3Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
+@Profile("awss3")
 @RestController
 @RequestMapping("api")
 public class S3Controller {
